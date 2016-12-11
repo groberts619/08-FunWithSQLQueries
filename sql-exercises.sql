@@ -74,6 +74,27 @@ SET CompanyName='Amazon Prime Shipping'
 WHERE CompanyName='Amazon';
 
 //EXERCISE 16
+SELECT s.CompanyName, ROUND(SUM(o.Freight), 0) AS AverageTotalFreight
+FROM Orders o, Shippers s
+GROUP BY s.CompanyName
 
+//EXERCISE 17
+SELECT CONCAT (LastName, ', ', FirstName) AS DisplayName
+FROM Employees 
 
+//EXERCISE 18 
+INSERT INTO Customers (CustomerID, CompanyName, ContactName)
+VALUES ('GROBE', 'GlenCo','Glen Roberts')
+INSERT INTO Orders (CustomerID, ShipName)
+VALUES ('GROBE', 'Grandma's Boysenberry Spread')
 
+//EXERCISE 19
+DELETE FROM Customers
+WHERE CustomerID = 'GROBE';
+DELETE FROM Orders
+WHERE CustomerID = 'GROBE';
+
+//EXERCISE 20
+SELECT ProductName, UnitsInStock
+FROM Products
+WHERE UnitsInStock > 100;
